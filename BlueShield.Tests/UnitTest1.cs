@@ -1,4 +1,7 @@
-﻿namespace BlueShield.Tests
+﻿// Copyright (C) 2026 Niclas Rogulski. All rights reserved.
+// SPDX-License-Identifier: MPL-2.0
+
+namespace BlueShield.Tests
 {
     public class UnitTest1
     {

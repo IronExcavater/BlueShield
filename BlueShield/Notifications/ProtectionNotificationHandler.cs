@@ -1,3 +1,6 @@
+// Copyright (C) 2026 Niclas Rogulski. All rights reserved.
+// SPDX-License-Identifier: MPL-2.0
+
 using BlueShield.Core.Bluetooth;
 using BlueShield.Core.Settings;
 using BlueShield.Tray;

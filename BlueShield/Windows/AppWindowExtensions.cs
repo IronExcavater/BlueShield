@@ -1,3 +1,6 @@
+// Copyright (C) 2026 Niclas Rogulski. All rights reserved.
+// SPDX-License-Identifier: MPL-2.0
+
 using System.Runtime.InteropServices;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;

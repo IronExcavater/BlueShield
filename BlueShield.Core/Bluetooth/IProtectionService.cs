@@ -1,3 +1,6 @@
+// Copyright (C) 2026 Niclas Rogulski. All rights reserved.
+// SPDX-License-Identifier: MPL-2.0
+
 namespace BlueShield.Core.Bluetooth;
 
 public interface IProtectionService
