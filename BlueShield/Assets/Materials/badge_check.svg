@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 224 224"
+   width="224"
+   height="224"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="badge_check.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="4.4257812"
+     inkscape:cx="111.95763"
+     inkscape:cy="110.15004"
+     inkscape:window-width="2560"
+     inkscape:window-height="1351"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="green"
+       x1="64"
+       y1="32"
+       x2="192"
+       y2="224"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-16,-16)">
+      <stop
+         offset="0"
+         stop-color="#5FE12C"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#149A0F"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <circle
+     fill="#ffffff"
+     filter="url(#badgeShadow)"
+     id="circle2"
+     cy="112"
+     cx="112"
+     r="112"
+     style="stroke:none;stroke-width:1;stroke-dasharray:none;stroke-opacity:1"
+     inkscape:label="circle2"
+     mask="none" />
+  <circle
+     cx="112"
+     cy="112"
+     r="93"
+     fill="url(#green)"
+     id="circle3"
+     style="fill:url(#green)" />
+  <path
+     d="m 62,116 34,34 70,-75"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="25"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path3" />
+</svg>
