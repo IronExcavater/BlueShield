@@ -22,7 +22,12 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore
-        run: dotnet restore BlueGuard/BlueGuard.csproj -r win-${{ matrix.platform }} -p:Configuration=Release
+        run: >
+          dotnet restore BlueGuard/BlueGuard.csproj
+          -r win-${{ matrix.platform }}
+          -p:Configuration=Release
+          -p:PublishReadyToRun=false
+          -p:PublishTrimmed=false
 
       - name: Build
         run: >
@@ -30,6 +35,8 @@ jobs:
           -r win-${{ matrix.platform }}
           -c Release
           --no-restore
+          -p:PublishReadyToRun=false
+          -p:PublishTrimmed=false
 
       - name: Publish MSIX
         if: startsWith(github.ref, 'refs/tags/v')
