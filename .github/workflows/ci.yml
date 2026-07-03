@@ -2,10 +2,10 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     tags: ['v*']
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore
-        run: dotnet restore BlueGuard/BlueGuard.csproj -r win-${{ matrix.platform }}
+        run: dotnet restore BlueGuard/BlueGuard.csproj -r win-${{ matrix.platform }} -c Release
 
       - name: Build
         run: >
