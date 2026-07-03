@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Restore
-        run: dotnet restore BlueGuard/BlueGuard.csproj -r win-${{ matrix.platform }} -c Release
+        run: dotnet restore BlueGuard/BlueGuard.csproj -r win-${{ matrix.platform }} -p:Configuration=Release
 
       - name: Build
         run: >
