@@ -5,13 +5,12 @@ using Microsoft.UI.Xaml.Controls;
 
 namespace BlueGuard.Tray;
 
-// A checkable MenuFlyoutItem. Uses the Icon slot for the checkmark so it lines up with
-// sibling items that have their own icon, like Exit.
-// The Icon is always set — only its Opacity toggles — because MenuFlyoutItem collapses
-// the icon column's reserved space entirely when Icon is null, which shifts the text
-// sideways as items are checked/unchecked.
-// Fires Toggled only on user clicks — programmatic IsChecked sets are silent, which
-// prevents feedback loops when reverting a failed toggle.
+// Checkable MenuFlyoutItem — the checkmark lives in the Icon slot so it aligns with
+// sibling items that have real icons, like Exit.
+// Icon stays assigned; only Opacity toggles. A null Icon collapses the column entirely,
+// shifting the text sideways whenever checked state changes.
+// Toggled fires only on clicks — programmatic IsChecked sets stay silent, so reverting a
+// failed toggle doesn't loop back into the handler.
 internal sealed class MenuToggle
 {
     private readonly MenuFlyoutItem _item;

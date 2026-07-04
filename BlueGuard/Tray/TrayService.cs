@@ -11,11 +11,10 @@ namespace BlueGuard.Tray;
 
 internal sealed class TrayService : IDisposable
 {
-    // H.NotifyIcon's SecondWindow context menu measures each item's DesiredSize directly
-    // (MenuFlyoutPresenterStyle on the flyout is not applied), so width must be set per-item.
+    // SecondWindow ignores MenuFlyoutPresenterStyle, so width has to be set per item.
     private const double MenuItemMinWidth = 200;
 
-    // TaskbarIcon.IconSource converts via System.Drawing.Icon, which requires .ico not PNG.
+    // IconSource converts via System.Drawing.Icon — .ico only, no PNG.
     private static readonly Uri IconOnUri = new("ms-appx:///Assets/ToggleOn.ico");
     private static readonly Uri IconOffUri = new("ms-appx:///Assets/ToggleOff.ico");
 
@@ -45,8 +44,7 @@ internal sealed class TrayService : IDisposable
         var exit = new MenuFlyoutItem { Text = Strings.TrayMenuExit, MinWidth = MenuItemMinWidth };
         exit.Click += (_, _) => ExitRequested?.Invoke(this, EventArgs.Empty);
 
-        // IsHitTestVisible = false prevents the separator from receiving pointer events.
-        // Without it, the separator's default touch margins can overlap the item above it.
+        // Without this, the separator's touch margin can eat clicks meant for the item above it.
         var separator = new MenuFlyoutSeparator { IsHitTestVisible = false };
 
         var flyout = new MenuFlyout
@@ -63,10 +61,8 @@ internal sealed class TrayService : IDisposable
             ContextFlyout = flyout,
         };
 
-        // CloseContextMenuOnItemClick (added in 2.5.0-beta.1) replaces the old close-then-
-        // reopen dance: when false, an item click simply never closes the menu (the library
-        // cancels its own flyout.Closing internally), so "stay open" needs no window handles,
-        // P/Invoke, or dispatcher timing at all.
+        // CloseContextMenuOnItemClick (2.5.0-beta.1) replaces our old close-then-reopen hack —
+        // false just cancels the close, so "stay open" needs no window handles or timing tricks.
         ReopenAfterToggle.Toggled += (_, enabled) => _icon.CloseContextMenuOnItemClick = !enabled;
     }
 
