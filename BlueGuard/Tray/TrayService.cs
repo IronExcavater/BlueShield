@@ -67,12 +67,12 @@ internal sealed class TrayService : IDisposable
         // reopen dance: when false, an item click simply never closes the menu (the library
         // cancels its own flyout.Closing internally), so "stay open" needs no window handles,
         // P/Invoke, or dispatcher timing at all.
-        ReopenAfterToggle.Toggled += (_, enabled) => _icon.CloseContextMenuOnItemClick = enabled;
+        ReopenAfterToggle.Toggled += (_, enabled) => _icon.CloseContextMenuOnItemClick = !enabled;
     }
 
     public void Create()
     {
-        _icon.CloseContextMenuOnItemClick = ReopenAfterToggle.IsChecked;
+        _icon.CloseContextMenuOnItemClick = !ReopenAfterToggle.IsChecked;
         _icon.ForceCreate();
     }
 
