@@ -32,7 +32,7 @@ jobs:
         run: |
           $tag = $env:TAG_NAME
           if ($tag -notmatch '^v(\d+\.\d+\.\d+\.\d+)$') {
-            Write-Error "Tag '$tag' must look like vMAJOR.MINOR.BUILD.REVISION (e.g. v1.2.0.0) to become the MSIX package version."
+            Write-Error "Tag '$tag' must look like vMAJOR.MINOR.BUILD.REVISION to become the MSIX package version."
             exit 1
           }
           $version = $Matches[1]
